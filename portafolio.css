@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --bg: #2e2525;
+  --white: #ffffff;
+  --gray: #999;
+  --turquoise: #00d9c0;
+}
+/* NAV LATERAL */
+.nav {
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--gray);
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: var(--turquoise);
+}
+
+/* BOTÓN TEMA */
+.theme-toggle {
+  cursor: pointer;
+  font-size: 38px;
+  background: #00e7e7;
+  padding: 20px 10px;
+  border-radius: 100px;
+  transition: 0.3s;
+}
+
+.theme-toggle:hover {
+  background: white;
+  color: black;
+}
+
+/* MODO CLARO */
+body.light {
+  --bg: #ffffff;
+  --white: #000000;
+  --gray: #555;
+}
+
+body.light .card {
+  background: #f5f5f5;
+  border-color: #ddd;
+}
+
+body.light .card:hover {
+  background: #ffffff;
+}
+
+body.light .secondary {
+  background: black;
+  color: white;
+}
+
+/* NAV EN MÓVIL */
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+/* MÁRGENES MÁS CENTRADOS */
+section,
+.hero {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 60px;
+}
+
+@media (max-width: 768px) {
+  section,
+  .hero {
+    padding: 60px 25px;
+  }
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: clamp(4rem, 9vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: -3px;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  color: var(--gray);
+  margin: 25px 0;
+}
+
+.hero-btn {
+  display: flex;
+  gap: 16px;
+}
+
+/* BOTONES */
+.btn {
+  background-color: #555;
+  padding: 14px 32px;
+  text-decoration: none;
+  font-weight: bold;
+  color: whitesmoke;
+  transition: 0.3s ease;
+}
+.btn:hover {
+  background-color: turquoise;
+  color: black
+}
+
+.primary {
+  background: var(--turquoise);
+  color: black;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,217,192,0.25);
+}
+
+.secondary {
+  background: white;
+  color: black;
+}
+
+.secondary:hover {
+  transform: translateY(-3px);
+}
+
+/* TITULOS */
+h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+/* ABOUT */
+.about p {
+  max-width: 800px;
+  font-size: 1.15rem;
+  color: #ccc;
+}
+
+/* PROYECTOS EN 2 COLUMNAS */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.projects h2 {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARDS MODERNAS */
+.card {
+  border: 1px solid #222;
+  padding: 28px;
+  border-radius: 16px;
+  background: #151515;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(135deg, transparent, rgba(0,217,192,0.08));
+  opacity: 0;
+  transition: 0.35s;   
+   z-index: 0;
+
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--turquoise);
+  background: #1a1a1a;
+
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #bbb;
+}
+
+.card span {
+  display: block;
+  margin: 15px 0;
+  color: var(--turquoise);
+  font-weight: 600;
+}
+
+.card a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px solid var(--turquoise);
+    z-index: 10;
+
+}
+.card-link {
+  z-index: 10;
+}
+
+/* SKILLS */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.skills-list span {
+  border: 1px solid var(--turquoise);
+  padding: 10px 18px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.skills-list span:hover {
+  background: var(--turquoise);
+  color: black;
+}
+
+/* CONTACT */
+.contact p {
+  margin-bottom: 12px;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: none;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 25px;
+    background: var(--bg);
+  }
+
+  .nav ul {
+    flex-direction: row;
+    gap: 12px;
+  }
+}
