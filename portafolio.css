@@ -6,7 +6,7 @@
 }
 
 :root {
-  --bg: #2e2525;
+  --bg: #242323;
   --white: #ffffff;
   --gray: #999;
   --turquoise: #00d9c0;
@@ -276,6 +276,7 @@ h2 {
 
 @media (max-width: 768px) {
   .nav {
+    display: none;
     top: 0;
     right: 0;
     left: 0;
@@ -289,5 +290,83 @@ h2 {
   .nav ul {
     flex-direction: row;
     gap: 12px;
+  }
+}
+/* =========================
+   FIX RESPONSIVE MÓVIL
+========================= */
+@media (max-width: 768px) {
+
+  /* NAV */
+  .nav {
+    height: 60px;
+    align-items: center;
+  }
+
+  body {
+    padding-top: 70px; /* evita que el nav tape contenido */
+  }
+
+  .nav a {
+    font-size: 12px;
+  }
+
+  .theme-toggle {
+    font-size: 20px;
+    padding: 8px 10px;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    letter-spacing: -1px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* SECCIONES */
+  section,
+  .hero {
+    padding: 60px 20px;
+  }
+
+  /* TITULOS */
+  h2 {
+    font-size: 2rem;
+  }
+
+  /* CARDS */
+  .card {
+    padding: 20px;
+  }
+
+  .card h3 {
+    font-size: 1.4rem;
+  }
+
+  /* SKILLS */
+  .skills-list {
+    gap: 10px;
+  }
+
+  .skills-list span {
+    padding: 8px 14px;
+    font-size: 0.9rem;
   }
 }
